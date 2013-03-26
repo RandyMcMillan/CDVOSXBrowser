@@ -26,13 +26,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import <Cordova/CDVPlugin.h>
+@interface ___FILEBASENAME____JS : NSObject {}
 
-@interface ___FILEBASENAME___ : CDVPlugin {}
-
-- (void)init:(CDVInvokedUrlCommand *)command;
-- (void)nativeFunction:(CDVInvokedUrlCommand *)command;
-- (void)getDeviceInfo:(CDVInvokedUrlCommand *)command;
-+ (NSString *)cordovaVersion;
+extern NSString *const k___FILEBASENAME___INIT;
+extern NSString *const	k___FILEBASENAME___FUNCTION;
 
 @end

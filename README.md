@@ -1,36 +1,33 @@
-CDVBrowser
+CDVOSXPlugin
 ===
 
-Cordova (iOS) Xcode Plugin Template
+Cordova (OSX) Xcode Plugin Template
 ---
 
 
 
 ###Installation:
     $ cd ~/Library/Developer/Xcode/Templates/File\ Templates
-    $ git clone https://github.com/RandyMcMillan/CDVBrowser.git
+    $ git clone https://github.com/RandyMcMillan/CDVOSXPlugin.git
 
-![image](https://raw.github.com/RandyMcMillan/CDVBrowser/master/ScreenShot.png)
+![image](https://raw.github.com/RandyMcMillan/CDVOSXPlugin/master/ScreenShot.png)
 
-or 
-
-[https://github.com/RandyMcMillan/cdv-ios-plugin-templates](https://github.com/RandyMcMillan/cdv-ios-plugin-templates)    
-    
 ###Usage:
-####Open your Cordova (iOS) Xcode Project
+####Open your Cordova (OSX) Xcode Project
 
-* Press `<COMMAND+n>`    
+* Press <COMMAND+n>    
 
-    ![image](https://raw.github.com/RandyMcMillan/CDVBrowser/master/ScreenShot2.png)  
+    ![image](https://raw.github.com/RandyMcMillan/CDVOSXPlugin/master/ScreenShot2.png)  
 
+* RENAME your Plugin! (_Do not use CDVPlugin_)  
 
-    ![image](https://raw.github.com/RandyMcMillan/CDVBrowser/master/ScreenShot3.png)  
+    ![image](https://raw.github.com/RandyMcMillan/CDVOSXPlugin/master/ScreenShot3.png)  
 
-* Copy the CDVBrowser.js file to your /www folder
+* Copy the MyCDVPlugin.js file to your /www folder
 
-    ![image](https://raw.github.com/RandyMcMillan/CDVBrowser/master/ScreenShot4.png)
+    ![image](https://raw.github.com/RandyMcMillan/CDVOSXPlugin/master/ScreenShot4.png)
     
-[Sample index.html is included in the generated plugin](https://raw.github.com/RandyMcMillan/CDVPlugin/master/CDVPlugin.xctemplate/index.html)
+[Sample index.html is included in the generated plugin](https://raw.github.com/RandyMcMillan/CDVOSXPlugin/master/CDVOSXPlugin.xctemplate/index.html)
 
 
 <br><br>
@@ -58,9 +55,7 @@ or
  
 The MIT License
 
-
-  CDVBrowser Template Created Jan 7 2013
-  Copyright 2013 @RandyMcMillan
+Copyright (c) 2012 Randy McMillan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

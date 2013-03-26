@@ -7,7 +7,7 @@
 		<string>public.objective-c-source</string>
 	</array>
 	<key>Description</key>
-	<string>Cordova iOS ChildBrowser Plugin Template.</string>
+	<string>Cordova OSX Plugin Template. Do not use CDVPlugin as your plugin name.</string>
 	<key>Kind</key>
 	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
 	<key>MainTemplateFile</key>

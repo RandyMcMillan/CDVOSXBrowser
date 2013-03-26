@@ -1,5 +1,7 @@
-  ___FILEBASENAME___ Template Created Jan 7 2013
-  Copyright 2013 @RandyMcMillan
+##The MIT License
+
+
+___FILEBASENAME___  
 
   Created by ___FULLUSERNAME___ on ___DATE___.  
   Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
@@ -14,10 +16,9 @@
 | ------------ |---| ------------- |
 | ___FILEBASENAME___ | String | ___FILEBASENAME___ |
 
-[Sample index.html is included in the generated plugin](https://raw.github.com/RandyMcMillan/CDVBrowser/master/CDVBrowser.xctemplate/index.html)
+[Sample index.html is included in the generated plugin](https://raw.github.com/RandyMcMillan/CDVPlugin/master/CDVPlugin.xctemplate/index.html)
 
 
-##The MIT License
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in 
 the Software without restriction, including without limitation the rights to 

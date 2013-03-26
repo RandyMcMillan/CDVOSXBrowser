@@ -24,15 +24,14 @@
  *     Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
  */
 
-#import <Foundation/Foundation.h>
+#import "___FILEBASENAME____JS.h"
 
-#import <Cordova/CDVPlugin.h>
+@implementation ___FILEBASENAME____JS
 
-@interface ___FILEBASENAME___ : CDVPlugin {}
+// Remove line breaks/returns to use as one constant string!
+// Yes you can inject self executing functions into the webView!
+NSString *const k___FILEBASENAME___INIT		= @"(function() {console.log('k___FILEBASENAME___INIT evalutated from native string!');})();";
 
-- (void)init:(CDVInvokedUrlCommand *)command;
-- (void)nativeFunction:(CDVInvokedUrlCommand *)command;
-- (void)getDeviceInfo:(CDVInvokedUrlCommand *)command;
-+ (NSString *)cordovaVersion;
+NSString *const k___FILEBASENAME___FUNCTION = @"(function() {console.log('k___FILEBASENAME___FUNCTION evaluated from native string!');})();";
 
 @end
