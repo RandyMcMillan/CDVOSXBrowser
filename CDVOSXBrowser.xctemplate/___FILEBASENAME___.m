@@ -100,7 +100,7 @@
 	[self.commandDelegate sendPluginResult:result callbackId:[command.arguments objectAtIndex:0]];
 }
 
-- (void)getDeviceInfo:(CDVInvokedUrlCommand *)command
+- (void)showWebPage:(CDVInvokedUrlCommand *)command
 {
 	NSLog(@"getDeviceInfo called from %@!", [self class]);
 

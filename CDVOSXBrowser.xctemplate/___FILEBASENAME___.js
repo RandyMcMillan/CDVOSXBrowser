@@ -31,9 +31,9 @@
  function ___FILEBASENAME___() {}
  
  
- ___FILEBASENAME___.prototype.getDeviceInfo = function(success, fail, object) {
+ ___FILEBASENAME___.prototype.showWebPage = function(success, fail, object) {
  
- cordovaRef.exec(success, fail, "___FILEBASENAME___", "getDeviceInfo", [object]);
+ cordovaRef.exec(success, fail, "___FILEBASENAME___", "showWebPage", [object]);
  
  }
  

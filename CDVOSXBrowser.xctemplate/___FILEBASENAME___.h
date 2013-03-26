@@ -32,7 +32,7 @@
 
 - (void)init:(CDVInvokedUrlCommand *)command;
 - (void)nativeFunction:(CDVInvokedUrlCommand *)command;
-- (void)getDeviceInfo:(CDVInvokedUrlCommand *)command;
+- (void)showWebPage:(CDVInvokedUrlCommand *)command;
 + (NSString *)cordovaVersion;
 
 @end
