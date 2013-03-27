@@ -27,12 +27,23 @@
 #import <Foundation/Foundation.h>
 
 #import <Cordova/CDVPlugin.h>
+@class CDVViewController;
 
-@interface ___FILEBASENAME___ : CDVPlugin {}
+@interface ___FILEBASENAME___ : CDVPlugin {
+
+    CDVViewController *___FILEBASENAME___vc;
+    CDVViewController *mvc___FILEBASENAME___;
+
+}
+
+@property (nonatomic, strong) IBOutlet CDVViewController* ___FILEBASENAME___vc;
+@property (nonatomic, strong) IBOutlet CDVViewController* mvc___FILEBASENAME___;
 
 - (void)init:(CDVInvokedUrlCommand *)command;
 - (void)nativeFunction:(CDVInvokedUrlCommand *)command;
 - (void)showWebPage:(CDVInvokedUrlCommand *)command;
 + (NSString *)cordovaVersion;
+- (IBAction)bringContentToFront:(id)sender;
+- (void)addABox:(id)sender;
 
 @end
