@@ -36,7 +36,6 @@
 #import "___FILEBASENAME___.h"
 #import "___FILEBASENAME____JS.h"
 
-
 @implementation ___FILEBASENAME___
 @synthesize mvc___FILEBASENAME___;
 @synthesize ___FILEBASENAME___vc;
@@ -46,12 +45,12 @@
 - (void)init:(CDVInvokedUrlCommand *)command
 {
 	NSLog(@"init called from %@!", [self class]);
-    
-    for (int i = 0; i < [command.arguments count]; i++) {
+
+	for (int i = 0; i < [command.arguments count]; i++) {
 		NSLog(@"[command.arguments objectAtIndex:%i] = %@", i, [command.arguments objectAtIndex:i]);
 	}
-    
-    NSLog(@"command.callBackId = %@", command.callbackId);
+
+	NSLog(@"command.callBackId = %@", command.callbackId);
 	NSLog(@"[command class] =  %@", [command class]);
 	NSLog(@"[command methodName] = %@", [command methodName]);
 
@@ -64,27 +63,25 @@
 	NSHost *host = [NSHost currentHost];
 	NSLog(@"[host localizedName] =  %@", [host localizedName]);
 
-    self.mvc___FILEBASENAME___ = (CDVViewController *)[super viewController];
-    CDVPluginResult		*result;
+	self.mvc___FILEBASENAME___ = (CDVViewController *)[super viewController];
+	CDVPluginResult *result;
 
 	NSString *jsString = k___FILEBASENAME___INIT;
 	[self.mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
 	result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Success!"];
-    //    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-
-
+	//    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+	[self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
 - (void)nativeFunction:(CDVInvokedUrlCommand *)command
 {
 	NSLog(@"nativeFunction called from %@!", [self class]);
 
-    for (int i = 0; i < [command.arguments count]; i++) {
+	for (int i = 0; i < [command.arguments count]; i++) {
 		NSLog(@"[command.arguments objectAtIndex:%i] = %@", i, [command.arguments objectAtIndex:i]);
 	}
-    
-    NSLog(@"command.callBackId = %@", command.callbackId);
+
+	NSLog(@"command.callBackId = %@", command.callbackId);
 	NSLog(@"[command class] =  %@", [command class]);
 	NSLog(@"[command methodName] = %@", [command methodName]);
 
@@ -107,11 +104,11 @@
 {
 	NSLog(@"getDeviceInfo called from %@!", [self class]);
 
-    for (int i = 0; i < [command.arguments count]; i++) {
+	for (int i = 0; i < [command.arguments count]; i++) {
 		NSLog(@"[command.arguments objectAtIndex:%i] = %@", i, [command.arguments objectAtIndex:i]);
 	}
-    
-    NSLog(@"command.callBackId = %@", command.callbackId);
+
+	NSLog(@"command.callBackId = %@", command.callbackId);
 	NSLog(@"[command class] =  %@", [command class]);
 	NSLog(@"[command methodName] = %@", [command methodName]);
 
@@ -120,86 +117,78 @@
 
 	NSDictionary *deviceProperties = [self deviceProperties];
 
-self.mvc___FILEBASENAME___ = (CDVViewController *)[super viewController];
-self.___FILEBASENAME___vc = [[CDVViewController alloc]init];
-    //[___FILEBASENAME___vc.contentView setFrame:mvc___FILEBASENAME___.contentView.frame];
+	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
+	self.___FILEBASENAME___vc			= [[CDVViewController alloc]init];
+	self.___FILEBASENAME___vc.startPage = @"http://www.google.com";
 
-    
-    
-    //[self.mvc___FILEBASENAME___.contentView addSubview:___FILEBASENAME___vc.contentView];
-    //self.___FILEBASENAME___vc.contentView.alphaValue = 1.0;
-    self.___FILEBASENAME___vc.startPage = @"http://www.google.com";
+	// [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.___FILEBASENAME___vc.startPage];
 
-    
-    
-    //        [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.___FILEBASENAME___vc.startPage];
+	// [self.mvc___FILEBASENAME___.contentView addABox:self.mvc___FILEBASENAME___.contentView];
 
-    //[self.mvc___FILEBASENAME___.contentView addABox:self.mvc___FILEBASENAME___.contentView];
+	// self.___FILEBASENAME___vc.webView.alphaValue = 1.0;
 
-    
-    //self.___FILEBASENAME___vc.webView.alphaValue = 1.0;
+	// self.mvc___FILEBASENAME___.contentView.alphaValue = 0.5;
 
-    //self.mvc___FILEBASENAME___.contentView.alphaValue = 0.5;
-    
-	//NSString *jsString = k___FILEBASENAME___FUNCTION;
-	//[mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
-    //CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:[deviceProperties objectForKey:@"model"]];
-	//[self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+	// NSString *jsString = k___FILEBASENAME___FUNCTION;
+	// [mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
+	// CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:[deviceProperties objectForKey:@"model"]];
+	// [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 
-    
-    [self addABox:self];
-    
-    
+	[self displayDoneButton:self];
 }
-
-
 
 /* Create a new view to be added/animated. Any kind of view can be added here, we go for simple colored box using the Leopard "custom" box type.
  */
-- (NSView *)viewToBeAdded {
-    
-    
-    //NSView *superview = [window contentView];
-    NSRect frame = NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width/2-50, 10, 100, 50);
-    NSButton *button = [[NSButton alloc] initWithFrame:frame];
-    [button setAutoresizingMask: NSViewMinXMargin | NSViewMaxXMargin];
-    [button setTitle:@"Done"];
-    
-    
-    [button setTarget:self];
-    [button setAction:@selector(done:)];
-    
-    //[superview addSubview:button];
-    //[button release];
-    
-    
-    NSBox *box = [[NSBox alloc] initWithFrame:NSMakeRect(0.0, 0.0, 300, 300)];
-    [box setBoxType:NSBoxCustom];
-    [box setBorderType:NSLineBorder];
-    [box setTitlePosition:NSNoTitle];
-    [box setFillColor:[NSColor blackColor]];
-    //return box;
-    return button;
+- (NSView *)viewToBeAdded
+{
+	// NSView *superview = [window contentView];
+
+	NSBox *box = [[NSBox alloc] initWithFrame:NSMakeRect(0.0, 0.0, 300, 300)];
+	[box setBoxType:NSBoxCustom];
+	[box setBorderType:NSLineBorder];
+	[box setTitlePosition:NSNoTitle];
+	[box setFillColor:[NSColor blackColor]];
+	// return box;
+	return box;
 }
+
+- (NSButton *)addDoneButton
+{
+	// NSView *superview = [window contentView];
+	NSRect		frame	= NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width / 2 - 50, 10, 100, 50);
+	NSButton	*button = [[NSButton alloc] initWithFrame:frame];
+    
+	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin];
+	[button setTitle:@"Done"];
+    
+	[button setTarget:self];
+	[button setAction:@selector(done:)];
+    
+	return button;
+}
+
 
 /* Action methods to add/remove boxes, giving us something to animate.  Note that we cause a relayout here; a better design is to relayout in the view automatically on addition/removal of subviews.
  */
-- (void)addABox:(id)sender {
-    [self.mvc___FILEBASENAME___.contentView addSubview:[self viewToBeAdded]];
-    //[self layout];
+- (void)displayDoneButton:(id)sender
+{
+	self.doneButton = [self addDoneButton];
+    [self.mvc___FILEBASENAME___.contentView addSubview:self.doneButton];
 }
 
 - (IBAction)done:(id)sender
 {
-
-
-    NSLog(@"done");
+	NSLog(@"done");
+    //return  	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
+    // to [....webview back];
+    // and hide done button
     
-
 }
 
-- (IBAction)bringContentToFront:(id)sender {
-    NSWindow *windowRef = (NSWindow *)[NSApplication sharedApplication];
+- (IBAction)bringContentToFront:(id)sender
+{
+	NSWindow *windowRef = (NSWindow *)[NSApplication sharedApplication];
+
 	[windowRef makeKeyAndOrderFront:sender];
 }
 
