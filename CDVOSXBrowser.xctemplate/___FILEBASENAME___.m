@@ -160,9 +160,10 @@ self.___FILEBASENAME___vc = [[CDVViewController alloc]init];
     
     
     //NSView *superview = [window contentView];
-    NSRect frame = NSMakeRect(10, 10, 200, 100);
+    NSRect frame = NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width/2-50, 10, 100, 50);
     NSButton *button = [[NSButton alloc] initWithFrame:frame];
-    [button setTitle:@"Click me!"];
+    [button setAutoresizingMask: NSViewMinXMargin | NSViewMaxXMargin];
+    [button setTitle:@"Done"];
     
     
     [button setTarget:self];
