@@ -45,5 +45,6 @@
 + (NSString *)cordovaVersion;
 - (IBAction)bringContentToFront:(id)sender;
 - (void)addABox:(id)sender;
+- (IBAction)done:(id)sender;
 
 @end

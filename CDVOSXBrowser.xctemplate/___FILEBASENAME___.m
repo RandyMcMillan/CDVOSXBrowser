@@ -163,6 +163,11 @@ self.___FILEBASENAME___vc = [[CDVViewController alloc]init];
     NSRect frame = NSMakeRect(10, 10, 200, 100);
     NSButton *button = [[NSButton alloc] initWithFrame:frame];
     [button setTitle:@"Click me!"];
+    
+    
+    [button setTarget:self];
+    [button setAction:@selector(done:)];
+    
     //[superview addSubview:button];
     //[button release];
     
@@ -183,7 +188,14 @@ self.___FILEBASENAME___vc = [[CDVViewController alloc]init];
     //[self layout];
 }
 
+- (IBAction)done:(id)sender
+{
 
+
+    NSLog(@"done");
+    
+
+}
 
 - (IBAction)bringContentToFront:(id)sender {
     NSWindow *windowRef = (NSWindow *)[NSApplication sharedApplication];
