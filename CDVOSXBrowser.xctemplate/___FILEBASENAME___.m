@@ -157,12 +157,23 @@ self.___FILEBASENAME___vc = [[CDVViewController alloc]init];
 /* Create a new view to be added/animated. Any kind of view can be added here, we go for simple colored box using the Leopard "custom" box type.
  */
 - (NSView *)viewToBeAdded {
+    
+    
+    //NSView *superview = [window contentView];
+    NSRect frame = NSMakeRect(10, 10, 200, 100);
+    NSButton *button = [[NSButton alloc] initWithFrame:frame];
+    [button setTitle:@"Click me!"];
+    //[superview addSubview:button];
+    //[button release];
+    
+    
     NSBox *box = [[NSBox alloc] initWithFrame:NSMakeRect(0.0, 0.0, 300, 300)];
     [box setBoxType:NSBoxCustom];
     [box setBorderType:NSLineBorder];
     [box setTitlePosition:NSNoTitle];
     [box setFillColor:[NSColor blackColor]];
-    return box;
+    //return box;
+    return button;
 }
 
 /* Action methods to add/remove boxes, giving us something to animate.  Note that we cause a relayout here; a better design is to relayout in the view automatically on addition/removal of subviews.
