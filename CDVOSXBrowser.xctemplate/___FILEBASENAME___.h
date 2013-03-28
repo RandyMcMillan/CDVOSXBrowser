@@ -25,7 +25,6 @@
  */
 
 #import <Foundation/Foundation.h>
-@class MRSubtleButton;
 
 #import <Cordova/CDVPlugin.h>
 @class CDVViewController;
@@ -34,13 +33,17 @@
 
     CDVViewController *___FILEBASENAME___vc;
     CDVViewController *mvc___FILEBASENAME___;
+    NSButton *leftButton;
     NSButton *doneButton;
+    NSButton *rightButton;
     NSString *savedURL;
 }
 
 @property (nonatomic, strong) IBOutlet CDVViewController* ___FILEBASENAME___vc;
 @property (nonatomic, strong) IBOutlet CDVViewController* mvc___FILEBASENAME___;
+@property (nonatomic, strong) IBOutlet NSButton* leftButton;
 @property (nonatomic, strong) IBOutlet NSButton* doneButton;
+@property (nonatomic, strong) IBOutlet NSButton* rightButton;
 @property (nonatomic,readwrite) IBOutlet NSString* savedURL;
 
 - (void)init:(CDVInvokedUrlCommand *)command;
@@ -48,7 +51,9 @@
 - (void)showWebPage:(CDVInvokedUrlCommand *)command;
 + (NSString *)cordovaVersion;
 - (IBAction)bringContentToFront:(id)sender;
+- (void)displayLeftButton:(id)sender;
 - (void)displayDoneButton:(id)sender;
+- (void)displayRightButton:(id)sender;
 - (IBAction)done:(id)sender;
 - (NSButton *)addDoneButton;
 

@@ -32,7 +32,6 @@
 #import <Cordova/CDVAvailability.h>
 #import <Cordova/CDVViewController.h>
 #import <Cordova/CDVDebug.h>
-#import "MRSubtleButton.h"
 
 #import "___FILEBASENAME___.h"
 #import "___FILEBASENAME____JS.h"
@@ -170,6 +169,25 @@
 	return box;
 }
 
+
+- (NSButton *)addLeftButton
+{
+	// NSView *superview = [window contentView];
+	NSRect		frame	= NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width / 2 - 50, 10, 100, 40);
+	NSButton	*button = [[NSButton alloc] initWithFrame:frame];
+    
+	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable/*| NSViewHeightSizable*/];
+    [button setAlphaValue:0.8];
+	[button setTitle:@"Done"];
+    [button setButtonType:NSMomentaryPushInButton];
+    //[button setBezelStyle:NSSmallSquareBezelStyle];
+    [button setBezelStyle:NSSmallIconButtonBezelStyle];
+	[button setTarget:self];
+	[button setAction:@selector(done:)];
+    
+	return button;
+}
+
 - (NSButton *)addDoneButton
 {
 	// NSView *superview = [window contentView];
@@ -180,7 +198,26 @@
     [button setAlphaValue:0.8];
 	[button setTitle:@"Done"];
     [button setButtonType:NSMomentaryPushInButton];
-    [button setBezelStyle:NSSmallSquareBezelStyle];
+    //[button setBezelStyle:NSSmallSquareBezelStyle];
+    [button setBezelStyle:NSSmallIconButtonBezelStyle];
+	[button setTarget:self];
+	[button setAction:@selector(done:)];
+    
+	return button;
+}
+
+- (NSButton *)addRightButton
+{
+	// NSView *superview = [window contentView];
+	NSRect		frame	= NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width / 2 - 50, 10, 100, 40);
+	NSButton	*button = [[NSButton alloc] initWithFrame:frame];
+    
+	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable/*| NSViewHeightSizable*/];
+    [button setAlphaValue:0.8];
+	[button setTitle:@"Done"];
+    [button setButtonType:NSMomentaryPushInButton];
+    //[button setBezelStyle:NSSmallSquareBezelStyle];
+    [button setBezelStyle:NSSmallIconButtonBezelStyle];
 	[button setTarget:self];
 	[button setAction:@selector(done:)];
     
@@ -190,6 +227,24 @@
 
 /* Action methods to add/remove boxes, giving us something to animate.  Note that we cause a relayout here; a better design is to relayout in the view automatically on addition/removal of subviews.
  */
+
+- (void)displayLeftButton:(id)sender
+{
+    
+    if (self.leftButton == nil) {
+        
+        
+        self.leftButton = [self addLeftButton];
+        [self.mvc___FILEBASENAME___.contentView addSubview:self.leftButton];
+        
+    }else{
+        
+        [self.leftButton setEnabled:YES];
+        [self.leftButton setHidden:NO];
+    }
+}
+
+
 - (void)displayDoneButton:(id)sender
 {
     
@@ -206,6 +261,35 @@
     }
 }
 
+
+- (void)displayRightButton:(id)sender
+{
+    
+    if (self.rightButton == nil) {
+        
+        
+        self.rightButton = [self addRightButton];
+        [self.mvc___FILEBASENAME___.contentView addSubview:self.rightButton];
+        
+    }else{
+        
+        [self.rightButton setEnabled:YES];
+        [self.rightButton setHidden:NO];
+    }
+}
+
+- (IBAction)left:(id)sender
+{
+	NSLog(@"left");
+    //return  	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
+    // to [....webview back];
+    // and hide done button
+    [self.leftButton setEnabled:NO];
+    [self.leftButton setHidden:YES];
+    //  [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
+    
+}
+
 - (IBAction)done:(id)sender
 {
 	NSLog(@"done");
@@ -215,8 +299,22 @@
     [self.doneButton setEnabled:NO];
     [self.doneButton setHidden:YES];
     [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
+    
+}
+
+- (IBAction)right:(id)sender
+{
+	NSLog(@"right");
+    //return  	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
+    // to [....webview back];
+    // and hide done button
+    [self.rightButton setEnabled:NO];
+    [self.rightButton setHidden:YES];
+    //[self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
 
 }
+
+
 
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
