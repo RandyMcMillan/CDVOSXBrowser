@@ -39,6 +39,7 @@
 @implementation ___FILEBASENAME___
 @synthesize mvc___FILEBASENAME___;
 @synthesize ___FILEBASENAME___vc;
+@synthesize doneButton,savedURL;
 
 //  CDVInvokedUrlCommand* command = [[CDVInvokedUrlCommand alloc] initWithArguments:arguments callbackId:callbackId className:service methodName:action];
 
@@ -64,6 +65,12 @@
 	NSLog(@"[host localizedName] =  %@", [host localizedName]);
 
 	self.mvc___FILEBASENAME___ = (CDVViewController *)[super viewController];
+
+    self.savedURL = self.mvc___FILEBASENAME___.webView.mainFrameURL;
+    NSLog(@"mainFrameURL =\n  %@",self.mvc___FILEBASENAME___.webView.mainFrameURL);
+    NSLog(@"saved.URL =\n  %@",self.savedURL);
+ 
+    
 	CDVPluginResult *result;
 
 	NSString *jsString = k___FILEBASENAME___INIT;
@@ -118,8 +125,12 @@
 	NSDictionary *deviceProperties = [self deviceProperties];
 
 	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
+    self.savedURL = self.mvc___FILEBASENAME___.webView.mainFrameURL;
+    NSLog(@"mainFrameURL =\n  %@",self.mvc___FILEBASENAME___.webView.mainFrameURL);
+    NSLog(@"saved.URL =\n  %@",self.savedURL);
+
 	self.___FILEBASENAME___vc			= [[CDVViewController alloc]init];
-	self.___FILEBASENAME___vc.startPage = @"http://www.google.com";
+	[self.mvc___FILEBASENAME___.webView setMainFrameURL:[command.arguments objectAtIndex:0]];
 
 	// [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.___FILEBASENAME___vc.startPage];
 
@@ -194,6 +205,8 @@
     // and hide done button
     [self.doneButton setEnabled:NO];
     [self.doneButton setHidden:YES];
+    [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
+
 }
 
 - (IBAction)bringContentToFront:(id)sender

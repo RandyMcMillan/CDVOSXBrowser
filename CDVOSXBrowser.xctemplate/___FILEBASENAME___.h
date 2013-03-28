@@ -34,12 +34,13 @@
     CDVViewController *___FILEBASENAME___vc;
     CDVViewController *mvc___FILEBASENAME___;
     NSButton *doneButton;
-    
+    NSString *savedURL;
 }
 
 @property (nonatomic, strong) IBOutlet CDVViewController* ___FILEBASENAME___vc;
 @property (nonatomic, strong) IBOutlet CDVViewController* mvc___FILEBASENAME___;
 @property (nonatomic, strong) IBOutlet NSButton* doneButton;
+@property (nonatomic,readwrite) IBOutlet NSString* savedURL;
 
 - (void)init:(CDVInvokedUrlCommand *)command;
 - (void)nativeFunction:(CDVInvokedUrlCommand *)command;
