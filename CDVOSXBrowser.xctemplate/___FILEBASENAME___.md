@@ -16,7 +16,7 @@ ___FILEBASENAME___
 | ------------ |---| ------------- |
 | ___FILEBASENAME___ | String | ___FILEBASENAME___ |
 
-[Sample index.html is included in the generated plugin](https://raw.github.com/RandyMcMillan/CDVPlugin/master/CDVPlugin.xctemplate/index.html)
+[Sample index.html is included in the generated plugin](https://raw.github.com/RandyMcMillan/CDVOSXBrowser/master/CDVOSXBrowser.xctemplate/index.html)
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
