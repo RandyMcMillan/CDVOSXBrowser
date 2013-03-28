@@ -25,6 +25,7 @@
  */
 
 #import <Foundation/Foundation.h>
+@class MRSubtleButton;
 
 #import <Cordova/CDVPlugin.h>
 @class CDVViewController;

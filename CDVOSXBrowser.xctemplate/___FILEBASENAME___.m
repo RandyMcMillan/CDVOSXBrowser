@@ -32,6 +32,7 @@
 #import <Cordova/CDVAvailability.h>
 #import <Cordova/CDVViewController.h>
 #import <Cordova/CDVDebug.h>
+#import "MRSubtleButton.h"
 
 #import "___FILEBASENAME___.h"
 #import "___FILEBASENAME____JS.h"
@@ -122,14 +123,18 @@
 	NSHost *host = [NSHost currentHost];
 	NSLog(@"hostName %@", [host localizedName]);
 
-	NSDictionary *deviceProperties = [self deviceProperties];
+	//NSDictionary *deviceProperties = [self deviceProperties];
 
 	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
+    //[self.mvc___FILEBASENAME___.contentView setFrameSize:NSSizeFromString(@"300,300")];
+    //[self.mvc___FILEBASENAME___.contentView setFrameSize:CGSizeMake(self.mvc___FILEBASENAME___.contentView.frame.size.width, self.mvc___FILEBASENAME___.contentView.frame.size.height-300)];
+    [self.mvc___FILEBASENAME___.contentView setBounds:NSMakeRect(0.0, 0.0, self.mvc___FILEBASENAME___.contentView.frame.size.width, self.mvc___FILEBASENAME___.contentView.frame.size.height-1)];
+ 
     self.savedURL = self.mvc___FILEBASENAME___.webView.mainFrameURL;
     NSLog(@"mainFrameURL =\n  %@",self.mvc___FILEBASENAME___.webView.mainFrameURL);
     NSLog(@"saved.URL =\n  %@",self.savedURL);
 
-	self.___FILEBASENAME___vc			= [[CDVViewController alloc]init];
+	//self.___FILEBASENAME___vc			= [[CDVViewController alloc]init];
 	[self.mvc___FILEBASENAME___.webView setMainFrameURL:[command.arguments objectAtIndex:0]];
 
 	// [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.___FILEBASENAME___vc.startPage];
@@ -144,7 +149,9 @@
 	// [mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
 	// CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:[deviceProperties objectForKey:@"model"]];
 	// [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-
+    //[self.mvc___FILEBASENAME___.webView.mainFrame.frameView setAllowsScrolling:NO];
+    
+    //[[[self.mvc___FILEBASENAME___.webView mainFrame] frameView] setAllowsScrolling:NO];
 	[self displayDoneButton:self];
 }
 
@@ -166,12 +173,14 @@
 - (NSButton *)addDoneButton
 {
 	// NSView *superview = [window contentView];
-	NSRect		frame	= NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width / 2 - 50, 10, 100, 50);
+	NSRect		frame	= NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width / 2 - 50, 10, 100, 40);
 	NSButton	*button = [[NSButton alloc] initWithFrame:frame];
     
-	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin];
+	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable/*| NSViewHeightSizable*/];
+    [button setAlphaValue:0.8];
 	[button setTitle:@"Done"];
-    
+    [button setButtonType:NSMomentaryPushInButton];
+    [button setBezelStyle:NSSmallSquareBezelStyle];
 	[button setTarget:self];
 	[button setAction:@selector(done:)];
     
@@ -208,6 +217,14 @@
     [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
 
 }
+
+
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
+    NSScrollView *mainScrollView = sender.mainFrame.frameView.documentView.enclosingScrollView;
+    [mainScrollView setVerticalScrollElasticity:NSScrollElasticityNone];
+    [mainScrollView setHorizontalScrollElasticity:NSScrollElasticityNone];
+}
+
 
 - (IBAction)bringContentToFront:(id)sender
 {
