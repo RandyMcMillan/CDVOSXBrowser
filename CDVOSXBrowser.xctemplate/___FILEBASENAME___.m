@@ -151,7 +151,9 @@
     //[self.mvc___FILEBASENAME___.webView.mainFrame.frameView setAllowsScrolling:NO];
     
     //[[[self.mvc___FILEBASENAME___.webView mainFrame] frameView] setAllowsScrolling:NO];
+	[self displayLeftButton:self];
 	[self displayDoneButton:self];
+	[self displayRightButton:self];
 }
 
 /* Create a new view to be added/animated. Any kind of view can be added here, we go for simple colored box using the Leopard "custom" box type.
@@ -173,17 +175,18 @@
 - (NSButton *)addLeftButton
 {
 	// NSView *superview = [window contentView];
-	NSRect		frame	= NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width / 2 - 50, 10, 100, 40);
+	NSRect		frame	= NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width / 2 - 200, 10, 100, 40);
 	NSButton	*button = [[NSButton alloc] initWithFrame:frame];
     
 	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable/*| NSViewHeightSizable*/];
     [button setAlphaValue:0.8];
-	[button setTitle:@"Done"];
+	[button setTitle:@"⬅"];
+    [button setFont:[NSFont fontWithName:@"Arial" size:20]];
     [button setButtonType:NSMomentaryPushInButton];
     //[button setBezelStyle:NSSmallSquareBezelStyle];
     [button setBezelStyle:NSSmallIconButtonBezelStyle];
 	[button setTarget:self];
-	[button setAction:@selector(done:)];
+	[button setAction:@selector(left:)];
     
 	return button;
 }
@@ -197,6 +200,7 @@
 	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable/*| NSViewHeightSizable*/];
     [button setAlphaValue:0.8];
 	[button setTitle:@"Done"];
+    [button setFont:[NSFont fontWithName:@"Arial" size:20]];
     [button setButtonType:NSMomentaryPushInButton];
     //[button setBezelStyle:NSSmallSquareBezelStyle];
     [button setBezelStyle:NSSmallIconButtonBezelStyle];
@@ -209,17 +213,19 @@
 - (NSButton *)addRightButton
 {
 	// NSView *superview = [window contentView];
-	NSRect		frame	= NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width / 2 - 50, 10, 100, 40);
+	NSRect		frame	= NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width / 2 + 100, 10, 100, 40);
 	NSButton	*button = [[NSButton alloc] initWithFrame:frame];
     
 	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable/*| NSViewHeightSizable*/];
     [button setAlphaValue:0.8];
-	[button setTitle:@"Done"];
+	[button setTitle:@"➡"];
+    [button setFont:[NSFont fontWithName:@"Arial" size:20]];
+
     [button setButtonType:NSMomentaryPushInButton];
     //[button setBezelStyle:NSSmallSquareBezelStyle];
     [button setBezelStyle:NSSmallIconButtonBezelStyle];
 	[button setTarget:self];
-	[button setAction:@selector(done:)];
+	[button setAction:@selector(right:)];
     
 	return button;
 }
@@ -284,9 +290,10 @@
     //return  	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
     // to [....webview back];
     // and hide done button
-    [self.leftButton setEnabled:NO];
-    [self.leftButton setHidden:YES];
+    [self.leftButton setEnabled:YES];
+    [self.leftButton setHidden:NO];
     //  [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
+    [self.mvc___FILEBASENAME___.webView goBack];
     
 }
 
@@ -296,8 +303,12 @@
     //return  	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
     // to [....webview back];
     // and hide done button
+    [self.leftButton setEnabled:NO];
+    [self.leftButton setHidden:YES];
     [self.doneButton setEnabled:NO];
     [self.doneButton setHidden:YES];
+    [self.rightButton setEnabled:NO];
+    [self.rightButton setHidden:YES];
     [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
     
 }
@@ -308,9 +319,10 @@
     //return  	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
     // to [....webview back];
     // and hide done button
-    [self.rightButton setEnabled:NO];
-    [self.rightButton setHidden:YES];
+    [self.rightButton setEnabled:YES];
+    [self.rightButton setHidden:NO];
     //[self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
+    [self.mvc___FILEBASENAME___.webView goForward];
 
 }
 
