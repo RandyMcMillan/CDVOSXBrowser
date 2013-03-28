@@ -1,4 +1,4 @@
-CDVOSXPlugin
+CDVOSXBrowser
 ===
 
 Cordova (OSX) Xcode Plugin Template
@@ -8,26 +8,26 @@ Cordova (OSX) Xcode Plugin Template
 
 ###Installation:
     $ cd ~/Library/Developer/Xcode/Templates/File\ Templates
-    $ git clone https://github.com/RandyMcMillan/CDVOSXPlugin.git
+    $ git clone https://github.com/RandyMcMillan/CDVOSXBrowser.git
 
-![image](https://raw.github.com/RandyMcMillan/CDVOSXPlugin/master/ScreenShot.png)
+![image](https://raw.github.com/RandyMcMillan/CDVOSXBrowser/master/ScreenShot.png)
 
 ###Usage:
 ####Open your Cordova (OSX) Xcode Project
 
 * Press <COMMAND+n>    
 
-    ![image](https://raw.github.com/RandyMcMillan/CDVOSXPlugin/master/ScreenShot2.png)  
+    ![image](https://raw.github.com/RandyMcMillan/CDVOSXBrowser/master/ScreenShot2.png)  
 
 * RENAME your Plugin! (_Do not use CDVPlugin_)  
 
-    ![image](https://raw.github.com/RandyMcMillan/CDVOSXPlugin/master/ScreenShot3.png)  
+    ![image](https://raw.github.com/RandyMcMillan/CDVOSXBrowser/master/ScreenShot3.png)  
 
-* Copy the MyCDVPlugin.js file to your /www folder
+* Copy the CDVOSXBrowser.js file to your /www folder
 
-    ![image](https://raw.github.com/RandyMcMillan/CDVOSXPlugin/master/ScreenShot4.png)
+    ![image](https://raw.github.com/RandyMcMillan/CDVOSXBrowser/master/ScreenShot4.png)
     
-[Sample index.html is included in the generated plugin](https://raw.github.com/RandyMcMillan/CDVOSXPlugin/master/CDVOSXPlugin.xctemplate/index.html)
+[Sample index.html is included in the generated plugin](https://raw.github.com/RandyMcMillan/CDVOSXBrowser/master/CDVOSXBrowser.xctemplate/index.html)
 
 
 <br><br>
