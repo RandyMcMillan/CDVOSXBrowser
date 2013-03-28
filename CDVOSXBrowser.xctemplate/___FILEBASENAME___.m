@@ -172,8 +172,18 @@
  */
 - (void)displayDoneButton:(id)sender
 {
+    
+    if (self.doneButton == nil) {
+        
+    
 	self.doneButton = [self addDoneButton];
     [self.mvc___FILEBASENAME___.contentView addSubview:self.doneButton];
+
+    }else{
+    
+        [self.doneButton setEnabled:YES];
+        [self.doneButton setHidden:NO];
+    }
 }
 
 - (IBAction)done:(id)sender
@@ -182,7 +192,8 @@
     //return  	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
     // to [....webview back];
     // and hide done button
-    
+    [self.doneButton setEnabled:NO];
+    [self.doneButton setHidden:YES];
 }
 
 - (IBAction)bringContentToFront:(id)sender
