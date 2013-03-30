@@ -46,14 +46,20 @@
  */
 
 #import <Cocoa/Cocoa.h>
+#import <Cordova/CDVViewController.h>
+#import <Cordova/CDVCommandDelegateImpl.h>
+#import <Cordova/CDVCommandQueue.h>
 
-@interface ___FILEBASENAME____VC : NSWindowController {
+@interface ___FILEBASENAME____VC : CDVViewController {
 @private
     NSTextField *_textField;
-
+    NSWindow *cdvVCWindow;
+    
 }
 
 // Example property outlet
 @property(nonatomic,readwrite) IBOutlet NSTextField *textField;
+@property(nonatomic,readwrite) IBOutlet     NSWindow *cdvVCWindow;
+
 
 @end

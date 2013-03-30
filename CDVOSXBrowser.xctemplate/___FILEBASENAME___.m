@@ -135,9 +135,25 @@
     self.savedURL = self.mvc___FILEBASENAME___.webView.mainFrameURL;
     NSLog(@"mainFrameURL =\n  %@",self.mvc___FILEBASENAME___.webView.mainFrameURL);
     NSLog(@"saved.URL =\n  %@",self.savedURL);
+    
+    if ([self.mvc___FILEBASENAME___.webView isLoading]) {
+        NSLog(@"webview isloading");
+    }else{
+        
+        NSLog(@"WEbview is notloading");
+        
+    }
 
 	//self.___FILEBASENAME___vc			= [[CDVViewController alloc]init];
 	[self.mvc___FILEBASENAME___.webView setMainFrameURL:[command.arguments objectAtIndex:0]];
+    
+    if ([self.mvc___FILEBASENAME___.webView isLoading]) {
+        NSLog(@"webview isloading");
+    }else{
+        
+        NSLog(@"WEbview is notloading");
+        
+    }
 
 	// [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.___FILEBASENAME___vc.startPage];
 
@@ -166,7 +182,7 @@
     // [self.mvc___FILEBASENAME___.window addChildWindow:_myWindowController.window ordered:NSWindowAbove];
     //[self.mvc___FILEBASENAME___.window addChildWindow:_myWindowController.window ordered:NSWindowBelow];
     
-    // [_myWindowController.window makeKeyAndOrderFront:nil];
+     [_myWindowController.window makeKeyAndOrderFront:nil];
     
 }
 
@@ -304,10 +320,49 @@
     //return  	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
     // to [....webview back];
     // and hide done button
+    if (self.mvc___FILEBASENAME___.webView.canGoBack ==TRUE) {
+        
+    
+    
     [self.leftButton setEnabled:YES];
     [self.leftButton setHidden:NO];
     //  [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
     [self.mvc___FILEBASENAME___.webView goBack];
+  
+        if ([self.mvc___FILEBASENAME___.webView isLoading]) {
+            NSLog(@"webview isloading");
+        }else{
+        
+            NSLog(@"WEbview is notloading");
+            
+        }
+        
+        NSLog(@"%@\n",self.mvc___FILEBASENAME___.webView.mainFrameURL);
+        NSLog(@"%@\n",self.savedURL);
+        
+        if ([self.mvc___FILEBASENAME___.webView.mainFrameURL isEqualToString: self.savedURL]) {
+            // [self.leftButton setEnabled:NO];
+        }
+    
+    }else{
+        
+        
+        
+        [self done:self];
+    
+    
+    }
+    
+    
+    if ([self.mvc___FILEBASENAME___.webView isLoading]) {
+        NSLog(@"webview isloading");
+    }else{
+        
+        NSLog(@"WEbview is notloading");
+        
+    }
+
+    
     
 }
 
@@ -337,6 +392,16 @@
     [self.rightButton setHidden:NO];
     //[self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
     [self.mvc___FILEBASENAME___.webView goForward];
+    
+    
+    if ([self.mvc___FILEBASENAME___.webView isLoading]) {
+        NSLog(@"webview isloading");
+    }else{
+        
+        NSLog(@"WEbview is notloading");
+        
+    }
+
 
 }
 
