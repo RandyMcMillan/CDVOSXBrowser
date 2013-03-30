@@ -1,5 +1,5 @@
 /*
-     File: MyWindowController.h 
+     File: MyWindowController.m 
  Abstract: The main window controller for this application, used for testing nib loading. 
   Version: 1.0 
   
@@ -45,15 +45,10 @@
   
  */
 
-#import <Cocoa/Cocoa.h>
+#import "___FILEBASENAME____VC.h"
 
-@interface MyWindowController : NSWindowController {
-@private
-    NSTextField *_textField;
+@implementation ___FILEBASENAME____VC
 
-}
-
-// Example property outlet
-@property(nonatomic,readwrite) IBOutlet NSTextField *textField;
+@synthesize textField = _textField;
 
 @end

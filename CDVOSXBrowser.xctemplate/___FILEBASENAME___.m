@@ -36,7 +36,7 @@
 #import "___FILEBASENAME___.h"
 #import "___FILEBASENAME____JS.h"
 
-#import "MyWindowController.h"
+#import "___FILEBASENAME____VC.h"
 
 
 @implementation ___FILEBASENAME___
@@ -159,7 +159,7 @@
 	[self displayRightButton:self];
     
     if (_myWindowController == nil) {
-        _myWindowController = [[MyWindowController alloc] initWithWindowNibName:@"___FILEBASENAME____View"];
+        _myWindowController = [[___FILEBASENAME____VC alloc] initWithWindowNibName:@"___FILEBASENAME____VC"];
     }
     [_myWindowController.window makeKeyAndOrderFront:nil];
     

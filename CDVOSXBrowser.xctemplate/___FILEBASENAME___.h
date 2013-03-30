@@ -25,10 +25,10 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "___FILEBASENAME____VC.h"
 
 #import <Cordova/CDVPlugin.h>
 @class CDVViewController;
-@class MyWindowController;
 @interface ___FILEBASENAME___ : CDVPlugin {
 
     CDVViewController *___FILEBASENAME___vc;
@@ -37,7 +37,7 @@
     NSButton *doneButton;
     NSButton *rightButton;
     NSString *savedURL;
-    MyWindowController *_myWindowController;
+    ___FILEBASENAME____VC *_myWindowController;
 
 }
 
