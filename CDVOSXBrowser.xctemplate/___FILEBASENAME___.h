@@ -43,6 +43,7 @@
 
 @property (nonatomic, strong) IBOutlet CDVViewController* ___FILEBASENAME___vc;
 @property (nonatomic, strong) IBOutlet CDVViewController* mvc___FILEBASENAME___;
+@property (nonatomic, strong) IBOutlet ___FILEBASENAME____VC* _myWindowController;
 @property (nonatomic, strong) IBOutlet NSButton* leftButton;
 @property (nonatomic, strong) IBOutlet NSButton* doneButton;
 @property (nonatomic, strong) IBOutlet NSButton* rightButton;

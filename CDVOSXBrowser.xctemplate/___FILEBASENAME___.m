@@ -145,7 +145,7 @@
     }
 
 	//self.___FILEBASENAME___vc			= [[CDVViewController alloc]init];
-	[self.mvc___FILEBASENAME___.webView setMainFrameURL:[command.arguments objectAtIndex:0]];
+	//[self.mvc___FILEBASENAME___.webView setMainFrameURL:[command.arguments objectAtIndex:0]];
     
     if ([self.mvc___FILEBASENAME___.webView isLoading]) {
         NSLog(@"webview isloading");
@@ -174,18 +174,24 @@
 	[self displayDoneButton:self];
 	[self displayRightButton:self];
     
-    if (_myWindowController == nil) {
-        _myWindowController = [[___FILEBASENAME____VC alloc] initWithWindowNibName:@"___FILEBASENAME____VC"];
+    if (self._myWindowController == nil) {
+        self._myWindowController = [[___FILEBASENAME____VC alloc] initWithWindowNibName:@"___FILEBASENAME____VC"];
     }
 
     
+    //   [self.mvc___FILEBASENAME___.contentView setBounds:NSMakeRect(0.0, 0.0, self.mvc___FILEBASENAME___.contentView.frame.size.width, self.mvc___FILEBASENAME___.contentView.frame.size.height-1)];
+
+    
+    
+    // [_myWindowController.contentView setBounds:NSMakeRect(0.0, 0.0, self.mvc___FILEBASENAME___.contentView.frame.size.width, self.mvc___FILEBASENAME___.contentView.frame.size.height-1)];//self.mvc___FILEBASENAME___.contentView.frame];
     // [self.mvc___FILEBASENAME___.window addChildWindow:_myWindowController.window ordered:NSWindowAbove];
     //[self.mvc___FILEBASENAME___.window addChildWindow:_myWindowController.window ordered:NSWindowBelow];
     
-     [_myWindowController.window makeKeyAndOrderFront:nil];
+     [self._myWindowController.window makeKeyAndOrderFront:nil];
     
-	[_myWindowController.webView setMainFrameURL:[command.arguments objectAtIndex:0]];
-    
+	[self._myWindowController.webView setMainFrameURL:[command.arguments objectAtIndex:0]];
+    [self._myWindowController.textField setTextColor:[NSColor redColor]];
+    self._myWindowController.textField.stringValue = [command.arguments objectAtIndex:0];
 }
 
 /* Create a new view to be added/animated. Any kind of view can be added here, we go for simple colored box using the Leopard "custom" box type.
@@ -322,16 +328,16 @@
     //return  	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
     // to [....webview back];
     // and hide done button
-    if (self.mvc___FILEBASENAME___.webView.canGoBack ==TRUE) {
+    if (self._myWindowController.webView.canGoBack ==TRUE) {
         
     
     
     [self.leftButton setEnabled:YES];
     [self.leftButton setHidden:NO];
     //  [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
-    [self.mvc___FILEBASENAME___.webView goBack];
+    [self._myWindowController.webView goBack];
   
-        if ([self.mvc___FILEBASENAME___.webView isLoading]) {
+        if ([self._myWindowController.webView isLoading]) {
             NSLog(@"webview isloading");
         }else{
         
@@ -339,10 +345,10 @@
             
         }
         
-        NSLog(@"%@\n",self.mvc___FILEBASENAME___.webView.mainFrameURL);
+        NSLog(@"%@\n",self._myWindowController.webView.mainFrameURL);
         NSLog(@"%@\n",self.savedURL);
         
-        if ([self.mvc___FILEBASENAME___.webView.mainFrameURL isEqualToString: self.savedURL]) {
+        if ([self._myWindowController.webView.mainFrameURL isEqualToString: self.savedURL]) {
             // [self.leftButton setEnabled:NO];
         }
     
@@ -356,7 +362,7 @@
     }
     
     
-    if ([self.mvc___FILEBASENAME___.webView isLoading]) {
+    if ([self._myWindowController.webView isLoading]) {
         NSLog(@"webview isloading");
     }else{
         
@@ -381,6 +387,8 @@
     [self.rightButton setEnabled:NO];
     [self.rightButton setHidden:YES];
     [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
+    self._myWindowController.window.isVisible = FALSE;
+    // [self._myWindowController autorelease];
     
 }
 
@@ -393,10 +401,10 @@
     [self.rightButton setEnabled:YES];
     [self.rightButton setHidden:NO];
     //[self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
-    [self.mvc___FILEBASENAME___.webView goForward];
+    [self._myWindowController.webView goForward];
     
     
-    if ([self.mvc___FILEBASENAME___.webView isLoading]) {
+    if ([self._myWindowController.webView isLoading]) {
         NSLog(@"webview isloading");
     }else{
         
