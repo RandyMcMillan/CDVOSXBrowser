@@ -36,6 +36,9 @@
 #import "___FILEBASENAME___.h"
 #import "___FILEBASENAME____JS.h"
 
+#import "MyWindowController.h"
+
+
 @implementation ___FILEBASENAME___
 @synthesize mvc___FILEBASENAME___;
 @synthesize ___FILEBASENAME___vc;
@@ -154,6 +157,12 @@
 	[self displayLeftButton:self];
 	[self displayDoneButton:self];
 	[self displayRightButton:self];
+    
+    if (_myWindowController == nil) {
+        _myWindowController = [[MyWindowController alloc] initWithWindowNibName:@"ThirdWindow"];
+    }
+    [_myWindowController.window makeKeyAndOrderFront:nil];
+    
 }
 
 /* Create a new view to be added/animated. Any kind of view can be added here, we go for simple colored box using the Leopard "custom" box type.
