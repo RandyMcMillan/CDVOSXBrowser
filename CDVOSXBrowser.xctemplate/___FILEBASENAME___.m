@@ -184,6 +184,8 @@
     
      [_myWindowController.window makeKeyAndOrderFront:nil];
     
+	[_myWindowController.webView setMainFrameURL:[command.arguments objectAtIndex:0]];
+    
 }
 
 /* Create a new view to be added/animated. Any kind of view can be added here, we go for simple colored box using the Leopard "custom" box type.
