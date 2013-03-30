@@ -14,6 +14,8 @@
 			<string>IBNSLayoutConstraint</string>
 			<string>NSCustomObject</string>
 			<string>NSCustomView</string>
+			<string>NSView</string>
+			<string>NSWindowTemplate</string>
 			<string>WebView</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -26,13 +28,34 @@
 		</object>
 		<array class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
 			<object class="NSCustomObject" id="1001">
-				<string key="NSClassName">___FILEBASENAME___</string>
+				<string key="NSClassName">MyWindowController</string>
 			</object>
 			<object class="NSCustomObject" id="1003">
 				<string key="NSClassName">FirstResponder</string>
 			</object>
 			<object class="NSCustomObject" id="1004">
 				<string key="NSClassName">NSApplication</string>
+			</object>
+			<object class="NSWindowTemplate" id="452916666">
+				<int key="NSWindowStyleMask">15</int>
+				<int key="NSWindowBacking">2</int>
+				<string key="NSWindowRect">{{121, 123}, {480, 270}}</string>
+				<int key="NSWTFlags">611845120</int>
+				<string key="NSWindowTitle">Window</string>
+				<string key="NSWindowClass">NSWindow</string>
+				<nil key="NSViewClass"/>
+				<nil key="NSUserInterfaceItemIdentifier"/>
+				<object class="NSView" key="NSWindowView" id="333606106">
+					<reference key="NSNextResponder"/>
+					<int key="NSvFlags">256</int>
+					<string key="NSFrameSize">{480, 270}</string>
+					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
+					<string key="NSReuseIdentifierKey">_NS:20</string>
+				</object>
+				<string key="NSScreenRect">{{0, 0}, {1366, 746}}</string>
+				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
+				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="747017010">
 				<string key="NSClassName">CDVViewController</string>
@@ -99,6 +122,14 @@
 						<reference key="destination" ref="747017010"/>
 					</object>
 					<int key="connectionID">12</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">window</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="452916666"/>
+					</object>
+					<int key="connectionID">15</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -260,6 +291,19 @@
 						<reference key="object" ref="747017010"/>
 						<reference key="parent" ref="0"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">13</int>
+						<reference key="object" ref="452916666"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="333606106"/>
+						</array>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">14</int>
+						<reference key="object" ref="333606106"/>
+						<reference key="parent" ref="452916666"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -271,6 +315,9 @@
 					<reference ref="297559165"/>
 				</array>
 				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="13.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<boolean value="YES" key="13.NSWindowTemplate.visibleAtLaunch"/>
+				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<array key="2.IBNSViewMetadataConstraints">
 					<reference ref="655122347"/>
 					<reference ref="53311867"/>
@@ -288,18 +335,10 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">12</int>
+			<int key="maxID">15</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">CDVPlugin</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDVPlugin.h</string>
-					</object>
-				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">CDVViewController</string>
 					<string key="superclassName">NSWindowController</string>
@@ -336,19 +375,30 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">MyWindowController</string>
+					<string key="superclassName">NSWindowController</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">textField</string>
+						<string key="NS.object.0">NSTextField</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">textField</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">textField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/MyWindowController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">NSLayoutConstraint</string>
 					<string key="superclassName">NSObject</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/NSLayoutConstraint.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">___FILEBASENAME___</string>
-					<string key="superclassName">CDVPlugin</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/___FILEBASENAME___.h</string>
 					</object>
 				</object>
 			</array>

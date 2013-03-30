@@ -159,7 +159,7 @@
 	[self displayRightButton:self];
     
     if (_myWindowController == nil) {
-        _myWindowController = [[MyWindowController alloc] initWithWindowNibName:@"ThirdWindow"];
+        _myWindowController = [[MyWindowController alloc] initWithWindowNibName:@"___FILEBASENAME____View"];
     }
     [_myWindowController.window makeKeyAndOrderFront:nil];
     
