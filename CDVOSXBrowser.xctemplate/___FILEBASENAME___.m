@@ -161,7 +161,12 @@
     if (_myWindowController == nil) {
         _myWindowController = [[___FILEBASENAME____VC alloc] initWithWindowNibName:@"___FILEBASENAME____VC"];
     }
-    [_myWindowController.window makeKeyAndOrderFront:nil];
+
+    
+    // [self.mvc___FILEBASENAME___.window addChildWindow:_myWindowController.window ordered:NSWindowAbove];
+    //[self.mvc___FILEBASENAME___.window addChildWindow:_myWindowController.window ordered:NSWindowBelow];
+    
+    // [_myWindowController.window makeKeyAndOrderFront:nil];
     
 }
 
