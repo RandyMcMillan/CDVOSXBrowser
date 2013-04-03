@@ -3,6 +3,8 @@ CDVOSXBrowser
 
 Cordova (OSX) Xcode Plugin Template
 ---
+![image](https://raw.github.com/RandyMcMillan/CDVOSXBrowser/master/ScreenShot6.png)
+![image](https://raw.github.com/RandyMcMillan/CDVOSXBrowser/master/ScreenShot5.png)
 
 
 
