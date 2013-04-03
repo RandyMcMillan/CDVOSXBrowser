@@ -74,7 +74,7 @@
 										<string>public.url</string>
 										<string>public.url-name</string>
 									</set>
-									<string key="NSFrame">{{0, 103}, {640, 358}}</string>
+									<string key="NSFrame">{{0, 72}, {640, 409}}</string>
 									<reference key="NSSuperview" ref="1005"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView"/>
@@ -94,8 +94,8 @@
 								</object>
 								<object class="NSTextField" id="281895259">
 									<reference key="NSNextResponder" ref="1005"/>
-									<int key="NSvFlags">268</int>
-									<string key="NSFrame">{{301, 55}, {38, 17}}</string>
+									<int key="NSvFlags">295</int>
+									<string key="NSFrame">{{203, 47}, {235, 17}}</string>
 									<reference key="NSSuperview" ref="1005"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView"/>
@@ -103,7 +103,7 @@
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSTextFieldCell" key="NSCell" id="622414625">
 										<int key="NSCellFlags">68157504</int>
-										<int key="NSCellFlags2">272630784</int>
+										<int key="NSCellFlags2">138413056</int>
 										<string key="NSContents">Label</string>
 										<object class="NSFont" key="NSSupport">
 											<string key="NSName">LucidaGrande</string>
@@ -305,8 +305,8 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="1005"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="281895259"/>
 							<reference ref="893676878"/>
+							<reference ref="281895259"/>
 						</array>
 						<reference key="parent" ref="105637620"/>
 					</object>

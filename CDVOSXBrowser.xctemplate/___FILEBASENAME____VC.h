@@ -54,12 +54,12 @@
 @private
     NSTextField *_textField;
     NSWindow *cdvVCWindow;
-    
+    WebView *webview;
 }
 
 // Example property outlet
 @property(nonatomic,readwrite) IBOutlet NSTextField *textField;
 @property(nonatomic,readwrite) IBOutlet     NSWindow *cdvVCWindow;
-
+@property(nonatomic,readwrite) IBOutlet     WebView *webView;
 
 @end

@@ -49,6 +49,7 @@
 
 @implementation ___FILEBASENAME____VC
 
+@synthesize  cdvVCWindow,webView;
 @synthesize textField = _textField;
 
 @end
