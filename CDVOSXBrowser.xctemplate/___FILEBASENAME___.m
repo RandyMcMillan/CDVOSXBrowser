@@ -38,11 +38,10 @@
 
 #import "___FILEBASENAME____VC.h"
 
-
 @implementation ___FILEBASENAME___
 @synthesize mvc___FILEBASENAME___;
 @synthesize ___FILEBASENAME___vc;
-@synthesize doneButton,savedURL;
+@synthesize doneButton, savedURL;
 
 //  CDVInvokedUrlCommand* command = [[CDVInvokedUrlCommand alloc] initWithArguments:arguments callbackId:callbackId className:service methodName:action];
 
@@ -69,11 +68,10 @@
 
 	self.mvc___FILEBASENAME___ = (CDVViewController *)[super viewController];
 
-    self.savedURL = self.mvc___FILEBASENAME___.webView.mainFrameURL;
-    NSLog(@"mainFrameURL =\n  %@",self.mvc___FILEBASENAME___.webView.mainFrameURL);
-    NSLog(@"saved.URL =\n  %@",self.savedURL);
- 
-    
+	self.savedURL = self.mvc___FILEBASENAME___.webView.mainFrameURL;
+	NSLog(@"mainFrameURL =\n  %@", self.mvc___FILEBASENAME___.webView.mainFrameURL);
+	NSLog(@"saved.URL =\n  %@", self.savedURL);
+
 	CDVPluginResult *result;
 
 	NSString *jsString = k___FILEBASENAME___INIT;
@@ -125,73 +123,46 @@
 	NSHost *host = [NSHost currentHost];
 	NSLog(@"hostName %@", [host localizedName]);
 
-	//NSDictionary *deviceProperties = [self deviceProperties];
+	// NSDictionary *deviceProperties = [self deviceProperties];
 
-	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
-    //[self.mvc___FILEBASENAME___.contentView setFrameSize:NSSizeFromString(@"300,300")];
-    //[self.mvc___FILEBASENAME___.contentView setFrameSize:CGSizeMake(self.mvc___FILEBASENAME___.contentView.frame.size.width, self.mvc___FILEBASENAME___.contentView.frame.size.height-300)];
-    [self.mvc___FILEBASENAME___.contentView setBounds:NSMakeRect(0.0, 0.0, self.mvc___FILEBASENAME___.contentView.frame.size.width, self.mvc___FILEBASENAME___.contentView.frame.size.height-1)];
- 
-    self.savedURL = self.mvc___FILEBASENAME___.webView.mainFrameURL;
-    NSLog(@"mainFrameURL =\n  %@",self.mvc___FILEBASENAME___.webView.mainFrameURL);
-    NSLog(@"saved.URL =\n  %@",self.savedURL);
-    
-    if ([self.mvc___FILEBASENAME___.webView isLoading]) {
-        NSLog(@"webview isloading");
-    }else{
-        
-        NSLog(@"WEbview is notloading");
-        
-    }
+	self.mvc___FILEBASENAME___ = (CDVViewController *)[super viewController];
+	// [self.mvc___FILEBASENAME___.contentView setFrameSize:NSSizeFromString(@"300,300")];
+	// [self.mvc___FILEBASENAME___.contentView setFrameSize:CGSizeMake(self.mvc___FILEBASENAME___.contentView.frame.size.width, self.mvc___FILEBASENAME___.contentView.frame.size.height-300)];
+	[self.mvc___FILEBASENAME___.contentView setBounds:NSMakeRect(0.0, 0.0, self.mvc___FILEBASENAME___.contentView.frame.size.width, self.mvc___FILEBASENAME___.contentView.frame.size.height - 1)];
 
-	//self.___FILEBASENAME___vc			= [[CDVViewController alloc]init];
-	//[self.mvc___FILEBASENAME___.webView setMainFrameURL:[command.arguments objectAtIndex:0]];
-    
-    if ([self.mvc___FILEBASENAME___.webView isLoading]) {
-        NSLog(@"webview isloading");
-    }else{
-        
-        NSLog(@"WEbview is notloading");
-        
-    }
+	self.savedURL = self.mvc___FILEBASENAME___.webView.mainFrameURL;
+	NSLog(@"mainFrameURL =\n  %@", self.mvc___FILEBASENAME___.webView.mainFrameURL);
+	NSLog(@"saved.URL =\n  %@", self.savedURL);
 
-	// [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.___FILEBASENAME___vc.startPage];
+	if ([self.mvc___FILEBASENAME___.webView isLoading]) {
+		NSLog(@"webview isloading");
+	} else {
+		NSLog(@"WEbview is notloading");
+	}
 
-	// [self.mvc___FILEBASENAME___.contentView addABox:self.mvc___FILEBASENAME___.contentView];
+	// self.___FILEBASENAME___vc			= [[CDVViewController alloc]init];
+	// [self.mvc___FILEBASENAME___.webView setMainFrameURL:[command.arguments objectAtIndex:0]];
 
-	// self.___FILEBASENAME___vc.webView.alphaValue = 1.0;
+	if ([self.mvc___FILEBASENAME___.webView isLoading]) {
+		NSLog(@"webview isloading");
+	} else {
+		NSLog(@"WEbview is notloading");
+	}
 
-	// self.mvc___FILEBASENAME___.contentView.alphaValue = 0.5;
+	if (self._myWindowController == nil) {
+		self._myWindowController = [[___FILEBASENAME____VC alloc] initWithWindowNibName:@"___FILEBASENAME____VC"];
+	}
+	[self._myWindowController.contentView setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable | NSViewHeightSizable];
+	[self._myWindowController.webView setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable | NSViewHeightSizable];
 
-	// NSString *jsString = k___FILEBASENAME___FUNCTION;
-	// [mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
-	// CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:[deviceProperties objectForKey:@"model"]];
-	// [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-    //[self.mvc___FILEBASENAME___.webView.mainFrame.frameView setAllowsScrolling:NO];
-    
-    //[[[self.mvc___FILEBASENAME___.webView mainFrame] frameView] setAllowsScrolling:NO];
+	[self._myWindowController.window makeKeyAndOrderFront:nil];
+	[self._myWindowController.webView setMainFrameURL:[command.arguments objectAtIndex:0]];
+	[self._myWindowController.textField setTextColor:[NSColor redColor]];
+	self._myWindowController.textField.stringValue = [command.arguments objectAtIndex:0];
+
 	[self displayLeftButton:self];
 	[self displayDoneButton:self];
 	[self displayRightButton:self];
-    
-    if (self._myWindowController == nil) {
-        self._myWindowController = [[___FILEBASENAME____VC alloc] initWithWindowNibName:@"___FILEBASENAME____VC"];
-    }
-
-    
-    //   [self.mvc___FILEBASENAME___.contentView setBounds:NSMakeRect(0.0, 0.0, self.mvc___FILEBASENAME___.contentView.frame.size.width, self.mvc___FILEBASENAME___.contentView.frame.size.height-1)];
-
-    
-    
-    // [_myWindowController.contentView setBounds:NSMakeRect(0.0, 0.0, self.mvc___FILEBASENAME___.contentView.frame.size.width, self.mvc___FILEBASENAME___.contentView.frame.size.height-1)];//self.mvc___FILEBASENAME___.contentView.frame];
-    // [self.mvc___FILEBASENAME___.window addChildWindow:_myWindowController.window ordered:NSWindowAbove];
-    //[self.mvc___FILEBASENAME___.window addChildWindow:_myWindowController.window ordered:NSWindowBelow];
-    
-     [self._myWindowController.window makeKeyAndOrderFront:nil];
-    
-	[self._myWindowController.webView setMainFrameURL:[command.arguments objectAtIndex:0]];
-    [self._myWindowController.textField setTextColor:[NSColor redColor]];
-    self._myWindowController.textField.stringValue = [command.arguments objectAtIndex:0];
 }
 
 /* Create a new view to be added/animated. Any kind of view can be added here, we go for simple colored box using the Leopard "custom" box type.
@@ -201,6 +172,7 @@
 	// NSView *superview = [window contentView];
 
 	NSBox *box = [[NSBox alloc] initWithFrame:NSMakeRect(0.0, 0.0, 300, 300)];
+
 	[box setBoxType:NSBoxCustom];
 	[box setBorderType:NSLineBorder];
 	[box setTitlePosition:NSNoTitle];
@@ -209,23 +181,22 @@
 	return box;
 }
 
-
 - (NSButton *)addLeftButton
 {
 	// NSView *superview = [window contentView];
 	NSRect		frame	= NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width / 2 - 200, 10, 100, 40);
 	NSButton	*button = [[NSButton alloc] initWithFrame:frame];
-    
-	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable/*| NSViewHeightSizable*/];
-    [button setAlphaValue:0.8];
+
+	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable /*| NSViewHeightSizable*/];
+	[button setAlphaValue:0.8];
 	[button setTitle:@"⬅"];
-    [button setFont:[NSFont fontWithName:@"Arial" size:20]];
-    [button setButtonType:NSMomentaryPushInButton];
-    //[button setBezelStyle:NSSmallSquareBezelStyle];
-    [button setBezelStyle:NSSmallIconButtonBezelStyle];
+	[button setFont:[NSFont fontWithName:@"Arial" size:20]];
+	[button setButtonType:NSMomentaryPushInButton];
+	// [button setBezelStyle:NSSmallSquareBezelStyle];
+	[button setBezelStyle:NSSmallIconButtonBezelStyle];
 	[button setTarget:self];
 	[button setAction:@selector(left:)];
-    
+
 	return button;
 }
 
@@ -234,17 +205,17 @@
 	// NSView *superview = [window contentView];
 	NSRect		frame	= NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width / 2 - 50, 10, 100, 40);
 	NSButton	*button = [[NSButton alloc] initWithFrame:frame];
-    
-	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable/*| NSViewHeightSizable*/];
-    [button setAlphaValue:0.8];
+
+	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable /*| NSViewHeightSizable*/];
+	[button setAlphaValue:0.8];
 	[button setTitle:@"Done"];
-    [button setFont:[NSFont fontWithName:@"Arial" size:20]];
-    [button setButtonType:NSMomentaryPushInButton];
-    //[button setBezelStyle:NSSmallSquareBezelStyle];
-    [button setBezelStyle:NSSmallIconButtonBezelStyle];
+	[button setFont:[NSFont fontWithName:@"Arial" size:20]];
+	[button setButtonType:NSMomentaryPushInButton];
+	// [button setBezelStyle:NSSmallSquareBezelStyle];
+	[button setBezelStyle:NSSmallIconButtonBezelStyle];
 	[button setTarget:self];
 	[button setAction:@selector(done:)];
-    
+
 	return button;
 }
 
@@ -253,177 +224,141 @@
 	// NSView *superview = [window contentView];
 	NSRect		frame	= NSMakeRect(self.mvc___FILEBASENAME___.contentView.frame.size.width / 2 + 100, 10, 100, 40);
 	NSButton	*button = [[NSButton alloc] initWithFrame:frame];
-    
-	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable/*| NSViewHeightSizable*/];
-    [button setAlphaValue:0.8];
-	[button setTitle:@"➡"];
-    [button setFont:[NSFont fontWithName:@"Arial" size:20]];
 
-    [button setButtonType:NSMomentaryPushInButton];
-    //[button setBezelStyle:NSSmallSquareBezelStyle];
-    [button setBezelStyle:NSSmallIconButtonBezelStyle];
+	[button setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable /*| NSViewHeightSizable*/];
+	[button setAlphaValue:0.8];
+	[button setTitle:@"➡"];
+	[button setFont:[NSFont fontWithName:@"Arial" size:20]];
+
+	[button setButtonType:NSMomentaryPushInButton];
+	// [button setBezelStyle:NSSmallSquareBezelStyle];
+	[button setBezelStyle:NSSmallIconButtonBezelStyle];
 	[button setTarget:self];
 	[button setAction:@selector(right:)];
-    
+
 	return button;
 }
-
 
 /* Action methods to add/remove boxes, giving us something to animate.  Note that we cause a relayout here; a better design is to relayout in the view automatically on addition/removal of subviews.
  */
 
 - (void)displayLeftButton:(id)sender
 {
-    
-    if (self.leftButton == nil) {
+	if (self.leftButton == nil) {
+		self.leftButton = [self addLeftButton];
+		[self.mvc___FILEBASENAME___.contentView addSubview:self.leftButton];
+		[self._myWindowController.contentView addSubview:self.leftButton];
         
-        
-        self.leftButton = [self addLeftButton];
-        [self.mvc___FILEBASENAME___.contentView addSubview:self.leftButton];
-        
-    }else{
-        
-        [self.leftButton setEnabled:YES];
-        [self.leftButton setHidden:NO];
-    }
+	} else {
+		[self.leftButton setEnabled:YES];
+		[self.leftButton setHidden:NO];
+	}
 }
-
 
 - (void)displayDoneButton:(id)sender
 {
-    
-    if (self.doneButton == nil) {
-        
-    
-	self.doneButton = [self addDoneButton];
-    [self.mvc___FILEBASENAME___.contentView addSubview:self.doneButton];
+	if (self.doneButton == nil) {
+		self.doneButton = [self addDoneButton];
+		[self.mvc___FILEBASENAME___.contentView addSubview:self.doneButton];
+        [self._myWindowController.contentView addSubview:self.doneButton];
 
-    }else{
-    
-        [self.doneButton setEnabled:YES];
-        [self.doneButton setHidden:NO];
-    }
+	} else {
+		[self.doneButton setEnabled:YES];
+		[self.doneButton setHidden:NO];
+	}
 }
-
 
 - (void)displayRightButton:(id)sender
 {
-    
-    if (self.rightButton == nil) {
-        
-        
-        self.rightButton = [self addRightButton];
-        [self.mvc___FILEBASENAME___.contentView addSubview:self.rightButton];
-        
-    }else{
-        
-        [self.rightButton setEnabled:YES];
-        [self.rightButton setHidden:NO];
-    }
+	if (self.rightButton == nil) {
+		self.rightButton = [self addRightButton];
+		[self.mvc___FILEBASENAME___.contentView addSubview:self.rightButton];
+        [self._myWindowController.contentView addSubview:self.rightButton];
+
+	} else {
+		[self.rightButton setEnabled:YES];
+		[self.rightButton setHidden:NO];
+	}
 }
 
 - (IBAction)left:(id)sender
 {
 	NSLog(@"left");
-    //return  	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
-    // to [....webview back];
-    // and hide done button
-    if (self._myWindowController.webView.canGoBack ==TRUE) {
-        
-    
-    
-    [self.leftButton setEnabled:YES];
-    [self.leftButton setHidden:NO];
-    //  [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
-    [self._myWindowController.webView goBack];
-  
-        if ([self._myWindowController.webView isLoading]) {
-            NSLog(@"webview isloading");
-        }else{
-        
-            NSLog(@"WEbview is notloading");
-            
-        }
-        
-        NSLog(@"%@\n",self._myWindowController.webView.mainFrameURL);
-        NSLog(@"%@\n",self.savedURL);
-        
-        if ([self._myWindowController.webView.mainFrameURL isEqualToString: self.savedURL]) {
-            // [self.leftButton setEnabled:NO];
-        }
-    
-    }else{
-        
-        
-        
-        [self done:self];
-    
-    
-    }
-    
-    
-    if ([self._myWindowController.webView isLoading]) {
-        NSLog(@"webview isloading");
-    }else{
-        
-        NSLog(@"WEbview is notloading");
-        
-    }
 
-    
-    
+	// return   self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
+	// to [....webview back];
+	// and hide done button
+	if (self._myWindowController.webView.canGoBack == TRUE) {
+		[self.leftButton setEnabled:YES];
+		[self.leftButton setHidden:NO];
+		//  [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
+		[self._myWindowController.webView goBack];
+
+		if ([self._myWindowController.webView isLoading]) {
+			NSLog(@"webview isloading");
+		} else {
+			NSLog(@"WEbview is notloading");
+		}
+
+		NSLog(@"%@\n", self._myWindowController.webView.mainFrameURL);
+		NSLog(@"%@\n", self.savedURL);
+
+		if ([self._myWindowController.webView.mainFrameURL isEqualToString:self.savedURL]) {
+			// [self.leftButton setEnabled:NO];
+		}
+	} else {
+		[self done:self];
+	}
+
+	if ([self._myWindowController.webView isLoading]) {
+		NSLog(@"webview isloading");
+	} else {
+		NSLog(@"WEbview is notloading");
+	}
 }
 
 - (IBAction)done:(id)sender
 {
 	NSLog(@"done");
-    //return  	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
-    // to [....webview back];
-    // and hide done button
-    [self.leftButton setEnabled:NO];
-    [self.leftButton setHidden:YES];
-    [self.doneButton setEnabled:NO];
-    [self.doneButton setHidden:YES];
-    [self.rightButton setEnabled:NO];
-    [self.rightButton setHidden:YES];
-    [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
-    self._myWindowController.window.isVisible = FALSE;
-    // [self._myWindowController autorelease];
-    
+	// return   self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
+	// to [....webview back];
+	// and hide done button
+	[self.leftButton setEnabled:NO];
+	[self.leftButton setHidden:YES];
+	[self.doneButton setEnabled:NO];
+	[self.doneButton setHidden:YES];
+	[self.rightButton setEnabled:NO];
+	[self.rightButton setHidden:YES];
+	[self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
+	self._myWindowController.window.isVisible = FALSE;
+	// [self._myWindowController autorelease];
 }
 
 - (IBAction)right:(id)sender
 {
 	NSLog(@"right");
-    //return  	self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
-    // to [....webview back];
-    // and hide done button
-    [self.rightButton setEnabled:YES];
-    [self.rightButton setHidden:NO];
-    //[self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
-    [self._myWindowController.webView goForward];
-    
-    
-    if ([self._myWindowController.webView isLoading]) {
-        NSLog(@"webview isloading");
-    }else{
-        
-        NSLog(@"WEbview is notloading");
-        
-    }
+	// return   self.mvc___FILEBASENAME___			= (CDVViewController *)[super viewController];
+	// to [....webview back];
+	// and hide done button
+	[self.rightButton setEnabled:YES];
+	[self.rightButton setHidden:NO];
+	// [self.mvc___FILEBASENAME___.webView setMainFrameURL:self.savedURL];
+	[self._myWindowController.webView goForward];
 
-
+	if ([self._myWindowController.webView isLoading]) {
+		NSLog(@"webview isloading");
+	} else {
+		NSLog(@"WEbview is notloading");
+	}
 }
 
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
+{
+	NSScrollView *mainScrollView = sender.mainFrame.frameView.documentView.enclosingScrollView;
 
-
-
-- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
-    NSScrollView *mainScrollView = sender.mainFrame.frameView.documentView.enclosingScrollView;
-    [mainScrollView setVerticalScrollElasticity:NSScrollElasticityNone];
-    [mainScrollView setHorizontalScrollElasticity:NSScrollElasticityNone];
+	[mainScrollView setVerticalScrollElasticity:NSScrollElasticityNone];
+	[mainScrollView setHorizontalScrollElasticity:NSScrollElasticityNone];
 }
-
 
 - (IBAction)bringContentToFront:(id)sender
 {
