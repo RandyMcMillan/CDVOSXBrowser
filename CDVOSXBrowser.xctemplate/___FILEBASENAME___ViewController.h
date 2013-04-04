@@ -70,6 +70,7 @@
 @property (copy) NSString	*imageURL;
 @property (assign) BOOL		isImage;
 @property (assign) BOOL		scaleEnabled;
+@property (nonatomic,readwrite) NSString *savedURL;
 
 - (___FILEBASENAME___ViewController *)initWithScale:(BOOL)enabled;
 - (IBAction)onDoneButtonPress:(id)sender;

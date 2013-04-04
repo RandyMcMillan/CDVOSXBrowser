@@ -181,11 +181,16 @@
 	} else {
 		//[[self parentViewController] dismissModalViewControllerAnimated:YES];
 	}
-   
-    [self.webView.mainFrame loadHTMLString:nil baseURL:[NSURL URLWithString:@""]];
 
-    self.contentView.window.isVisible = FALSE;
+    //has to do with stopping media playback when window is hidden
+    NSString *htmlText = @"<html><body style='background-color:transparent;margin:0px;padding:0px;'><img style='min-height:200px;margin:0px;padding:0px;width:100%;height:100%;' alt='' src='IMGSRC'/></body></html>";
+    htmlText = [htmlText stringByReplacingOccurrencesOfString:@"IMGSRC" withString:@""];
     
+    [self.webView.mainFrame loadHTMLString:htmlText baseURL:[NSURL URLWithString:self.savedURL]];
+
+    [self.webView.backForwardList setCapacity:0];
+    
+    self.contentView.window.isVisible = FALSE;
 
 }
 
@@ -213,7 +218,12 @@
 
 - (void)loadURL:(NSString *)url
 {
+    
+    
 	NSLog(@"Opening Url : %@", url);
+    self.savedURL = url;
+    [self.webView.backForwardList setCapacity:10];
+ 
     if ([url hasPrefix:@"http://"]) {
         if ([url hasSuffix:@".png"] ||
             [url hasSuffix:@".jpg"] ||
@@ -223,7 +233,7 @@
             self.imageURL	= nil;
             self.imageURL	= url;
             self.isImage	= YES;
-            NSString *htmlText = @"<html><body style='background-color:#333;margin:0px;padding:0px;'><img style='min-height:200px;margin:0px;padding:0px;width:100%;height:auto;' alt='' src='IMGSRC'/></body></html>";
+            NSString *htmlText = @"<html><body style='background-color:#717171;margin:0px;padding:0px;'><img style='min-height:200px;margin:0px;padding:0px;width:100%;height:auto;' alt='' src='IMGSRC'/></body></html>";
             htmlText = [htmlText stringByReplacingOccurrencesOfString:@"IMGSRC" withString:url];
 
             [self.webView.mainFrame loadHTMLString:htmlText baseURL:[NSURL URLWithString:@""]];
