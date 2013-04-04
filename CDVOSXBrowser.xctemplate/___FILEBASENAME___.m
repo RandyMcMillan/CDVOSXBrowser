@@ -152,6 +152,7 @@
 	if (self._myWindowController == nil) {
 		self._myWindowController = [[___FILEBASENAME____VC alloc] initWithWindowNibName:@"___FILEBASENAME____VC"];
 	}
+
 	[self._myWindowController.contentView setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable | NSViewHeightSizable];
 	[self._myWindowController.webView setAutoresizingMask:NSViewMinXMargin | NSViewMaxXMargin | NSViewWidthSizable | NSViewHeightSizable];
 
@@ -248,7 +249,6 @@
 		self.leftButton = [self addLeftButton];
 		[self.mvc___FILEBASENAME___.contentView addSubview:self.leftButton];
 		[self._myWindowController.contentView addSubview:self.leftButton];
-        
 	} else {
 		[self.leftButton setEnabled:YES];
 		[self.leftButton setHidden:NO];
@@ -260,8 +260,7 @@
 	if (self.doneButton == nil) {
 		self.doneButton = [self addDoneButton];
 		[self.mvc___FILEBASENAME___.contentView addSubview:self.doneButton];
-        [self._myWindowController.contentView addSubview:self.doneButton];
-
+		[self._myWindowController.contentView addSubview:self.doneButton];
 	} else {
 		[self.doneButton setEnabled:YES];
 		[self.doneButton setHidden:NO];
@@ -273,8 +272,7 @@
 	if (self.rightButton == nil) {
 		self.rightButton = [self addRightButton];
 		[self.mvc___FILEBASENAME___.contentView addSubview:self.rightButton];
-        [self._myWindowController.contentView addSubview:self.rightButton];
-
+		[self._myWindowController.contentView addSubview:self.rightButton];
 	} else {
 		[self.rightButton setEnabled:YES];
 		[self.rightButton setHidden:NO];
