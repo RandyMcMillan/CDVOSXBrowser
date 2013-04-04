@@ -28,7 +28,7 @@
 
 @interface ___FILEBASENAME____JS : NSObject {}
 
-extern NSString *const k___FILEBASENAME___INIT;
+extern NSString *const	k___FILEBASENAME___INIT;
 extern NSString *const	k___FILEBASENAME___FUNCTION;
 
 @end

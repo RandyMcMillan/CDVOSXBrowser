@@ -46,31 +46,31 @@
 @protocol CDVOrientationDelegate <NSObject>
 
 - (NSUInteger)supportedInterfaceOrientations;
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+// - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 - (BOOL)shouldAutorotate;
 
 @end
 
-//@interface ___FILEBASENAME___ViewController : CDVViewController <UIWebViewDelegate>{}
-@interface ___FILEBASENAME___ViewController : CDVViewController{}
+// @interface ___FILEBASENAME___ViewController : CDVViewController <UIWebViewDelegate>{}
+@interface ___FILEBASENAME___ViewController : CDVViewController {}
 
-@property (nonatomic, strong) IBOutlet WebView				*webView;
-@property (nonatomic, strong) IBOutlet NSButton			*closeBtn;
-@property (nonatomic, strong) IBOutlet NSButton			*refreshBtn;
-@property (nonatomic, strong) IBOutlet NSTextField		*addressLabel;
-@property (nonatomic, strong) IBOutlet NSButton			*backBtn;
-@property (nonatomic, strong) IBOutlet NSButton			*fwdBtn;
-@property (nonatomic, strong) IBOutlet NSButton			*safariBtn;
-//@property (nonatomic, strong) IBOutlet UIActivityIndicatorView	*spinner;
+@property (nonatomic, strong) IBOutlet WebView		*webView;
+@property (nonatomic, strong) IBOutlet NSButton		*closeBtn;
+@property (nonatomic, strong) IBOutlet NSButton		*refreshBtn;
+@property (nonatomic, strong) IBOutlet NSTextField	*addressLabel;
+@property (nonatomic, strong) IBOutlet NSButton		*backBtn;
+@property (nonatomic, strong) IBOutlet NSButton		*fwdBtn;
+@property (nonatomic, strong) IBOutlet NSButton		*safariBtn;
+// @property (nonatomic, strong) IBOutlet UIActivityIndicatorView	*spinner;
 
 // unsafe_unretained is equivalent to assign - used to prevent retain cycles in the two properties below
 @property (nonatomic, unsafe_unretained) id <___FILEBASENAME___Delegate>	delegate;
 @property (nonatomic, unsafe_unretained) id									orientationDelegate;
 
-@property (copy) NSString	*imageURL;
-@property (assign) BOOL		isImage;
-@property (assign) BOOL		scaleEnabled;
-@property (nonatomic,readwrite) NSString *savedURL;
+@property (copy) NSString					*imageURL;
+@property (assign) BOOL						isImage;
+@property (assign) BOOL						scaleEnabled;
+@property (nonatomic, readwrite) NSString	*savedURL;
 
 - (___FILEBASENAME___ViewController *)initWithScale:(BOOL)enabled;
 - (IBAction)onDoneButtonPress:(id)sender;

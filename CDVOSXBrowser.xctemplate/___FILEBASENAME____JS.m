@@ -30,7 +30,7 @@
 
 // Remove line breaks/returns to use as one constant string!
 // Yes you can inject self executing functions into the webView!
-NSString *const k___FILEBASENAME___INIT		= @"(function() {console.log('k___FILEBASENAME___INIT evalutated from native string!');})();";
+NSString *const k___FILEBASENAME___INIT = @"(function() {console.log('k___FILEBASENAME___INIT evalutated from native string!');})();";
 
 NSString *const k___FILEBASENAME___FUNCTION = @"(function() {console.log('k___FILEBASENAME___FUNCTION evaluated from native string!');})();";
 

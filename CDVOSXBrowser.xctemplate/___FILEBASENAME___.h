@@ -28,19 +28,17 @@
 #import "___FILEBASENAME___ViewController.h"
 
 @interface ___FILEBASENAME___ : CDVPlugin <___FILEBASENAME___Delegate>{
-
-    NSString *savedURL;
-
+	NSString *savedURL;
 }
 
 extern NSString *const k___FILEBASENAME___INIT;
 
-@property (nonatomic, strong) ___FILEBASENAME___ViewController *___FILEBASENAME___;
-@property (nonatomic,readwrite) IBOutlet NSString* savedURL;
+@property (nonatomic, strong) ___FILEBASENAME___ViewController	*___FILEBASENAME___;
+@property (nonatomic, readwrite) IBOutlet NSString				*savedURL;
 
 - (void)init:(CDVInvokedUrlCommand *)command;
 - (void)showWebPage:(CDVInvokedUrlCommand *)command;
-//- (void)showWebPage:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
+// - (void)showWebPage:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
 - (void)onChildLocationChange:(NSString *)newLoc;
 
 @end
