@@ -24,40 +24,23 @@
  *     Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
  */
 
-#import <Foundation/Foundation.h>
-#import "___FILEBASENAME____VC.h"
-
 #import <Cordova/CDVPlugin.h>
-@class CDVViewController;
-@interface ___FILEBASENAME___ : CDVPlugin {
+#import "___FILEBASENAME___ViewController.h"
 
-    CDVViewController *___FILEBASENAME___vc;
-    CDVViewController *mvc___FILEBASENAME___;
-    NSButton *leftButton;
-    NSButton *doneButton;
-    NSButton *rightButton;
+@interface ___FILEBASENAME___ : CDVPlugin <___FILEBASENAME___Delegate>{
+
     NSString *savedURL;
-    ___FILEBASENAME____VC *_myWindowController;
 
 }
 
-@property (nonatomic, strong) IBOutlet CDVViewController* ___FILEBASENAME___vc;
-@property (nonatomic, strong) IBOutlet CDVViewController* mvc___FILEBASENAME___;
-@property (nonatomic, strong) IBOutlet ___FILEBASENAME____VC* _myWindowController;
-@property (nonatomic, strong) IBOutlet NSButton* leftButton;
-@property (nonatomic, strong) IBOutlet NSButton* doneButton;
-@property (nonatomic, strong) IBOutlet NSButton* rightButton;
+extern NSString *const k___FILEBASENAME___INIT;
+
+@property (nonatomic, strong) ___FILEBASENAME___ViewController *___FILEBASENAME___;
 @property (nonatomic,readwrite) IBOutlet NSString* savedURL;
 
 - (void)init:(CDVInvokedUrlCommand *)command;
-- (void)nativeFunction:(CDVInvokedUrlCommand *)command;
 - (void)showWebPage:(CDVInvokedUrlCommand *)command;
-+ (NSString *)cordovaVersion;
-- (IBAction)bringContentToFront:(id)sender;
-- (void)displayLeftButton:(id)sender;
-- (void)displayDoneButton:(id)sender;
-- (void)displayRightButton:(id)sender;
-- (IBAction)done:(id)sender;
-- (NSButton *)addDoneButton;
+//- (void)showWebPage:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
+- (void)onChildLocationChange:(NSString *)newLoc;
 
 @end

@@ -7,14 +7,14 @@
 		<string>public.objective-c-source</string>
 	</array>
 	<key>Description</key>
-	<string>Cordova OSX Plugin Template. Do not use CDVPlugin as your plugin name.</string>
+	<string>Cordova OSX ChildBrowser Plugin Template.</string>
 	<key>Kind</key>
 	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
 	<key>MainTemplateFile</key>
 	<string>___FILEBASENAME___.m</string>
 	<key>Platforms</key>
 	<array>
-		<string>com.apple.platform.iphoneos</string>
+		<string>com.apple.platform.osx</string>
 	</array>
 </dict>
 </plist>
